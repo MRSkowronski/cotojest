@@ -1,1 +1,1 @@
-# cotojest
+# cotojest nie rozumiem
