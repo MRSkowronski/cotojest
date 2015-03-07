@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=UTF-8">
+    <meta name="Author" content="TLL">
+    <meta name="GENERATOR" content="Mozilla/4.76 [en] (Win98; U)
+      [Netscape]">
+    <title>GUI 01</title></head>
+<body>
+    <b><font size="+1">Klasy</font></b><br>
+    &nbsp; <br><br><b><u>
+        ZADANIE 1</u> (3p)</b>
+    
+    <p><b>Zaprojektować klasę </b>ZProstokat<b> reprezentującą
+        prostokąty znakowe na konsoli. Dla każdego prostokąta należy
+        określić: szerokość, wysokość, znak potrzebny do rysowania
+        brzegu prostokąta na konsoli, znak potrzebny do rysowania
+        wewnętrznej części prostokąta na konsoli. <span style="color: black;">Szerokość i wysokość prostokąta powinny być liczbami naturalnymi dodatnimi</span>.</b></p><p><b>
+      </b><b>Każdy prostokąt (lub w szczególnym przypadku, kwadrat)
+        powinien mieć swój unikalny numer (zaczynając od 1), nadany
+        automatycznie przy jego tworzeniu </b><b>(</b><u>Pomoc:</u> Skorzystać
+      ze składowych statycznych klasy<b>). </b><b><span style="color: black;">Prostokąty i kwadraty są numerowane oddzielnie</span>.</b><b> </b></p>
+    <p><b>Klasa </b>ZProstokat<b> powinna mieć metodę </b>public
+      String toString()<b> (</b><b><b>tj. przedefiniowanie metody </b></b>toString()<b><b>
+          z klasy </b></b>Object<b>) zwracającą informacje o
+        prostokącie: typ (prostokąt/kwadrat), numer (prostokąta lub
+        kwadratu), szerokość, wysokość, pole, obwód oraz "konsolową" postać znakową
+        prostokąta.</b><br>
+    </p>
+    <p><b>W klasie </b>ZProstokat<b> należy skorzystać z wywołania
+        kontruktora 4-parametrowego z innego konstruktora,
+        3-parametrowego za pomocą słowa kluczowego </b><i>this</i><b>.<br>
+      </b></p>
+    <p><span style="font-weight: bold;">Stworzyć w/w klasę w taki
+        sposób, aby następujący program:</span><b><br>
+      </b></p>public class ZProstokatTest {<br><br>&nbsp;&nbsp; &nbsp;public static void main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; try {<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ZProstokat p1 = new
+ZProstokat(4, 'a', 'e');&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; //
+konstruktor z 3 parametrami<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ZProstokat p2 = new ZProstokat(5, 3 , '*',
+'+');&nbsp;&nbsp; &nbsp;// konstruktor z 4 parametrami&nbsp;&nbsp;
+&nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ZProstokat p3 = new ZProstokat(3, 3, '+', 'x');<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ZProstokat p4 = new ZProstokat(3, 4, '^', '$');<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+System.out.println(p1);&nbsp;&nbsp;&nbsp; // niejawne wywołanie metody
+p1.toString()<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(p2);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(p3);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(p4);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ZProstokat p5 = new ZProstokat(0, 2, 'a', 'b');<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; } catch (Exception e) {<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(e.getMessage());<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp; &nbsp;}<br>}<p><span style="font-weight: bold;">wyprowadził na konsolę poniższe
+        wyniki:</span><br>
+    </p>Kwadrat (1) rozmiaru 4 x 4, pole = 16, obwód = 16<br>e e e e <br>e a a e <br>e a a e <br>e e e e <br><br>Prostokąt (1) rozmiaru 5 x 3, pole = 15, obwód = 16<br>+ + + + + <br>+ * * * + <br>+ + + + + <br><br>Kwadrat (2) rozmiaru 3 x 3, pole = 9, obwód = 12<br>x x x <br>x + x <br>x x x <br><br>Prostokąt (2) rozmiaru 3 x 4, pole = 12, obwód = 14<br>$ $ $ <br>$ ^ $ <br>$ ^ $ <br>$ $ $ <br><br>Błędny parametr!&nbsp;<b><u><br>
+        <br><br>
+      </u></b><b><u>ZADANIE 2</u></b><b> (4p)</b> <b><br>
+      <br style="color: rgb(255, 102, 102);"><span style="color: black;">
+      Zaprojektować klasy: </span></b><span style="color: black;">Kurs</span><span style="font-weight: bold; color: black;"> </span><b style="color: black;">reprezentującą kursy oraz&nbsp;</b><span style="color: black;">Osoba</span><b style="color: black;">
+reprezentującą uczestników kursów. Każda osoba-uczestnik posiada imię,
+wiek. Każdy kurs posiada nazwę, dolny limit wiekowy uczestników, górny
+limit liczby uczestników</b><span style="font-weight: bold; color: black;"> oraz strukturę (np. tablicę) przechowującą uczestników.<br>Na
+kurs można zapisywać osobę (stanie się ona uczestnikiem kursu) według
+następujących kryteriów (kolejność od najważniejszego): czy podana
+osoba już jest uczestnikiem kursu, czy podany kurs ma jeszcze wolne
+miejsce, czy osoba spełnia kryterium wiekowe kursu. Z kursu można
+również usunąć uczestnika.<br></span>
+    <b style="color: black;"><br></b><b style="color: black;">Podanie </b><span style="color: black;">null</span><b style="color: black;"> jako argumentu dla osoby/uczestnika w wywołaniu metod powinno spowodować obsługę wyjątku.</b><br style="color: black;"><br style="color: black;"><b style="color: black;">Klasa&nbsp;</b><span style="color: black;">Kurs</span><b style="color: black;"> powinna mieć metodę </b><span style="color: black;">public
+      String toString() </span><b style="color: black;">zwracajacą</b><b style="color: black;"> informacje o kursie: nazwę, uczestników.</b><b><br>
+    </b><br><br>
+    <span style="font-weight: bold;">Stworzyć w/w klasy w taki sposób,
+      aby następujący program:</span><br>
+    <br>public class KursTest {<br><br>&nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // utworzenie kursu z nazwą,
+dolnym limitem wiekowym (np. 3), górnym limitem uczestników (np.
+4)&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Kurs java = new Kurs("Java", 3, 4), cpp = new Kurs("C++", 2, 2);&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // tablica kursów<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Kurs[] kursy = {java, cpp};<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // <span style="color: black;">utworzenie potencjalnych uczestników kursów z imieniem i wiekiem</span><br>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; Osoba janek = new Osoba("Janek", 6), adas = new
+Osoba("Adaś", 3), aleks = new Osoba("Aleks", 2), zosia = new
+Osoba("Zosia", 4), lenka = new Osoba("Lenka", 5);<br><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(adas);&nbsp;&nbsp;&nbsp; // <span style="color: black;">próba zapisywania osoby (np. adas) na kurs (np. java)</span><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(janek);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(aleks);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(zosia);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(lenka);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(lenka).dodajUczestnika(aleks);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println();<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+cpp.dodajUczestnika(aleks);&nbsp;&nbsp;&nbsp; // próba zapisywania
+osoby (np. aleks) na inny kurs (np. cpp)<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cpp.dodajUczestnika(janek);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println();<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.dodajUczestnika(null);&nbsp;&nbsp;&nbsp; <span style="color: black;">// błędnie podana osoba przy zapisywaniu na kurs</span><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } catch (Exception e) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(e.getMessage());<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("\n" + java + "\n");<br>&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.usunUczetnika(aleks);&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: black;">// próba usunięcia uczestnika z kursu</span><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; java.usunUczetnika(janek);<br><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println();<br><br>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+java.usunUczetnika(null);&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//
+błędnie podana osoba przy usunięciu z kursu<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } catch (Exception e) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(e.getMessage());<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("\n" + java);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(cpp + "\n");<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: black;">// </span><span style="font-weight: bold; color: black;">najliczniejszy(...)</span><span style="color: black;"> jest metodą statyczną klasy KursTest, zwracającą kurs z największą liczbą uczestników</span><br style="color: black;"><span style="color: black;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; // </span><span style="font-weight: bold; color: black;">trzeba dopisać tę metodę</span> <br>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; System.out.println("Kurs z największą liczbą
+uczestników: " + najliczniejszy(kursy).getNazwaKursu());<br>&nbsp;&nbsp;&nbsp; }<br>
+    }<br><br>
+    <b>wyprowadził na konsolę poniższe wyniki:<br>
+      </b><br>
+    <span style="color: black;">Dodano uczestnika Adaś do kursu Java</span><br>Dodano uczestnika Janek do kursu Java<br>Aleks nie spełnia kryterium wiekowego do kursu Java<br>Dodano uczestnika Zosia do kursu Java<br>Dodano uczestnika Lenka do kursu Java<br>Lenka już jest zapisany do kursu Java<br>Kurs Java: brak miejsc!<br><br>Dodano uczestnika Aleks do kursu C++<br>Dodano uczestnika Janek do kursu C++<br><br>Nie podano uczestnika przy zapisywaniu!<br><br>Kurs Java, uczestnicy: Adaś Janek Zosia Lenka <br><br>Kurs Java nie ma uczestnika Aleks<br>Usunięto uczestnika Janek z kursu Java<br><br>Nie podano uczestnika przy usunięciu!<br><br>Kurs Java, uczestnicy: Adaś Zosia Lenka <br>Kurs C++, uczestnicy: Aleks Janek <br><br>Kurs z największą liczbą uczestników: Java
+  </body></html>
